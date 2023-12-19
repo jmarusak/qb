@@ -12,47 +12,47 @@ public class TestJDBC
             String user = new String();
             String password = new String();
             
-            user = "jozef.marusak@telus.com";            
+            user = "admin";            
             password = "";
  
  
             /*
             driver = "oracle.jdbc.driver.OracleDriver";
-            url = "jdbc:oracle:thin:@142.63.132.71:41521:PDWM";
+            url = "jdbc:oracle:thin:@host:41521:PDWM";
             */
 
             /*
             driver = "oracle.jdbc.driver.OracleDriver";
-            url = "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = CAMPPR-scan.corp.ads)(PORT = 41521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = CAMPPRsva.WORLD)))";
+            url = "jdbc:oracle:thin:@(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = host)(PORT = 41521)) (CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = CAMPPRsva.WORLD)))";
             */
 
             /*
             driver = "org.apache.hive.jdbc.HiveDriver";
-            url = "jdbc:hive2://datalake-gw.oss.ads:8443/default;ssl=true;sslTrustStore=C:/keys/truststore.jks;trustStorePassword=****;transportMode=http;httpPath=gateway/default/hive";
+            url = "jdbc:hive2://host:8443/default;ssl=true;sslTrustStore=C:/keys/truststore.jks;trustStorePassword=****;transportMode=http;httpPath=gateway/default/hive";
             */
             
             /*
             driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-            url = "jdbc:sqlserver://WP40991.corp.ads\\SQL08PR02:1433;databaseName=VISION";
+            url = "jdbc:sqlserver://host\\SQL08PR02:1433;databaseName=VISION";
             */
             
             /*
             driver = "com.ibm.db2.jcc.DB2Driver";
-            url = "jdbc:db2://EDWUSR.TSL.TELUS.COM:9680/DSS";
+            url = "jdbc:db2://host:9680/DSS";
             */
             
             /*
             driver = "com.sas.net.sharenet.ShareNetDriver";
-            url = "jdbc:sharenet://sp20634:5013?librefs=bmudata '/sasdata/SASSMB/BMUData';mdm '/sasdata/SASCSP/MDM/sasdata'";
+            url = "jdbc:sharenet://host:5013?librefs=bmudata '/sasdata/SASSMB/BMUData';mdm '/sasdata/SASCSP/MDM/sasdata'";
             */
             
             /*
             driver = "com.mysql.jdbc.Driver";
-            url = "jdbc:mysql://NGSANDBOX7:3306/?useSSL=false";
+            url = "jdbc:mysql://host:3306/?useSSL=false";
             */
             
             driver = "com.simba.googlebigquery.jdbc.Driver";
-            url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=np-deep-ingestion;OAuthType=1;";
+            url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=project_id;OAuthType=1;";
             
             
                 
