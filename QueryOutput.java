@@ -32,7 +32,7 @@ public class QueryOutput extends JFrame {
         panelCenter.add(scrollPane);
             
         editorPaneOutput = new JTextArea();
-        editorPaneOutput.setFont(new Font("Menlo", Font.PLAIN, 16));
+        editorPaneOutput.setFont(new Font("Ubuntu Mono", Font.PLAIN, 16));
         setSize(650,700);
         setLocation(660,10);
         panelCenter.add(editorPaneOutput);
@@ -133,7 +133,7 @@ public class QueryOutput extends JFrame {
 
         StringBuilder sb = new StringBuilder(64);
         sb.append("<html><body>");
-        sb.append("<p style = 'font-family:Menlo;font-size:12px;'>");
+        sb.append("<p style = 'font-family:Ubuntu Mono;font-size:12px;'>");
         sb.append("<span style = 'color:#21618C;background:#ffffff;'>");
         sb.append(outputText);
         sb.append("</span>");

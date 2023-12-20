@@ -3,8 +3,8 @@
 delete from databases where database_name = 'SYSTEM';
 */
 
-insert into databases values ('SYSTEM', 'SQLITE', 'org.sqlite.JDBC', 'jdbc:sqlite:C:\\Sandbox\\QueryBuilder\\QueryBuilder.sqlite', 'admin', NULL);
-insert into databases values ('CHINOOK', 'SQLITE', 'org.sqlite.JDBC', 'jdbc:sqlite:C:\\Sandbox\\Chinook\\chinook.db', 'admin', NULL);
+insert into databases values ('SYSTEM', 'SQLITE', 'org.sqlite.JDBC', 'jdbc:sqlite:QueryBuilder.sqlite', 'admin', NULL);
+insert into databases values ('CHINOOK', 'SQLITE', 'org.sqlite.JDBC', 'jdbc:sqlite:chinook.db', 'admin', NULL);
 
 /*
 JDBC list

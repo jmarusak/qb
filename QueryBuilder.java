@@ -243,7 +243,7 @@ public class QueryBuilder extends JFrame implements WindowListener,
 
         listDatabases = new JList();
         listDatabases.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        listDatabases.setFont(new Font("Menlo", Font.PLAIN, 16));
+        listDatabases.setFont(new Font("Ubuntu Mono", Font.PLAIN, 16));
         scrollPaneDatabases.setViewportView(listDatabases);
 
         ListSelectionListener listSelectionListenerDatabases = new ListSelectionListener() {
@@ -268,7 +268,7 @@ public class QueryBuilder extends JFrame implements WindowListener,
 
         listSchemas = new JList();
         listSchemas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        listSchemas.setFont(new Font("Menlo", Font.PLAIN, 16));
+        listSchemas.setFont(new Font("Ubuntu Mono", Font.PLAIN, 16));
         scrollPaneSchemas.setViewportView(listSchemas);
 
         ListSelectionListener listSelectionListenerSchemas = new ListSelectionListener() {
@@ -305,12 +305,12 @@ public class QueryBuilder extends JFrame implements WindowListener,
 
         listTables = new JList();
         listTables.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        listTables.setFont(new Font("Menlo", Font.PLAIN, 16));
+        listTables.setFont(new Font("Ubuntu Mono", Font.PLAIN, 16));
         scrollPaneTables.setViewportView(listTables);
         
         listTablesRecent = new JList();
         listTablesRecent.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        listTablesRecent.setFont(new Font("Menlo", Font.PLAIN, 16));
+        listTablesRecent.setFont(new Font("Ubuntu Mono", Font.PLAIN, 16));
         DefaultListModel listModelTablesRecent = new DefaultListModel();
         listTablesRecent.setModel(listModelTablesRecent);
         scrollPaneTablesRecent.setViewportView(listTablesRecent);
@@ -419,7 +419,7 @@ public class QueryBuilder extends JFrame implements WindowListener,
 
         listColumns = new JList();
         listColumns.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        listColumns.setFont(new Font("Menlo", Font.PLAIN, 16));
+        listColumns.setFont(new Font("Ubuntu Mono", Font.PLAIN, 16));
         listColumns.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         scrollPaneColumns.setViewportView(listColumns);
 
@@ -508,7 +508,7 @@ public class QueryBuilder extends JFrame implements WindowListener,
 
         editorPaneQuery = new JTextArea();
         editorPaneQuery.setForeground(Color.BLUE);
-        editorPaneQuery.setFont(new Font("Menlo", Font.PLAIN, 16));
+        editorPaneQuery.setFont(new Font("Ubuntu Mono", Font.PLAIN, 16));
         
         String defaultText = "\n";
         for (int i = 1; i < 10; i++) {
@@ -1317,9 +1317,10 @@ public class QueryBuilder extends JFrame implements WindowListener,
                 listModel.addElement(schema+'.'+table);
             }
             
-            //BQ
-            //table = schema + '.'+ table + ' ' + alias(table);
-            table = '`' +  database + '.' + schema + '.'+ table + "` AS " + alias(table);
+            table = schema + '.'+ table + ' ' + alias(table);
+            
+            // for BQ table_id in backticks
+            //table = '`' +  database + '.' + schema + '.'+ table + "` AS " + alias(table);
             sql = sql + table;
             
             editorPaneQuery.replaceSelection(sql);

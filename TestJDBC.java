@@ -15,6 +15,8 @@ public class TestJDBC
             user = "admin";            
             password = "";
  
+            driver = "org.sqlite.JDBC";
+            url = "jdbc:sqlite:QueryBuilder.sqlite";
  
             /*
             driver = "oracle.jdbc.driver.OracleDriver";
@@ -51,9 +53,10 @@ public class TestJDBC
             url = "jdbc:mysql://host:3306/?useSSL=false";
             */
             
+            /*
             driver = "com.simba.googlebigquery.jdbc.Driver";
             url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=project_id;OAuthType=1;";
-            
+            */
             
                 
             System.out.println("\nConnecting...to "+ url + "\n");

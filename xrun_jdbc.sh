@@ -1,1 +1,1 @@
-java -classpath .:/home/jmarusak/libs/* TestJDBC
+java -classpath .:libs/* TestJDBC
