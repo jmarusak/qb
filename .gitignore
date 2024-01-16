@@ -29,3 +29,6 @@ lib/
 # sqlite database
 *.sqlite
 *.db
+
+# vim cache
+*.swp

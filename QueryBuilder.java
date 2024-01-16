@@ -1317,10 +1317,9 @@ public class QueryBuilder extends JFrame implements WindowListener,
                 listModel.addElement(schema+'.'+table);
             }
             
-            table = schema + '.'+ table + ' ' + alias(table);
-            
-            // for BQ table_id in backticks
+            //BQ
             //table = '`' +  database + '.' + schema + '.'+ table + "` AS " + alias(table);
+            table = schema + '.'+ table + ' ' + alias(table);
             sql = sql + table;
             
             editorPaneQuery.replaceSelection(sql);
@@ -1344,8 +1343,8 @@ public class QueryBuilder extends JFrame implements WindowListener,
             }
             
             //BQ
-            //table = schema + '.'+ table + ' ' + alias(table);
-            table = '`' +  database + '.' + schema + '.'+ table + "` AS " + alias(table);
+            //table = '`' +  database + '.' + schema + '.'+ table + "` AS " + alias(table);
+            table = schema + '.'+ table + ' ' + alias(table);
             sql = sql + table;
             
             editorPaneQuery.replaceSelection(sql);
@@ -1379,10 +1378,10 @@ public class QueryBuilder extends JFrame implements WindowListener,
                 
             String sql = "SELECT " + column_list + ", COUNT(1) AS cnt" +
                         //BQ 
-                        //"\nFROM " + schema + '.' + table + ' ' + alias(table) +
-                         "\nFROM " + '`' +  database + '.' + schema + '.'+ table + "` AS " + alias(table) +
+                        // "\nFROM " + '`' +  database + '.' + schema + '.'+ table + "` AS " + alias(table) +
+                        "\nFROM " + schema + '.' + table + ' ' + alias(table) +
                          "\nGROUP BY " + column_list +
-                         "\nORDER BY 1 DESC";
+                         "\nORDER BY COUNT(1) DESC";
             
             DefaultListModel listModel = (DefaultListModel) listTablesRecent.getModel();
             if (!listModel.contains(schema+'.'+table)) {
@@ -1395,10 +1394,10 @@ public class QueryBuilder extends JFrame implements WindowListener,
         }
     }
     
+    
     private void popupMenuActionGenerateJoin() {
         
-        
-        if (listSchemas.getSelectedIndex() != 1 && listColumns.getSelectedIndex() != -1) {
+        if (listSchemas.getSelectedIndex() != -1 && listColumns.getSelectedIndex() != -1) {
             
             String schema = listSchemas.getSelectedValue().toString();
             
@@ -1418,7 +1417,7 @@ public class QueryBuilder extends JFrame implements WindowListener,
             String selectclause = new String();
             String fromclause = new String();
             String whereclause = new String();
-            
+                
             sql = editorPaneQuery.getSelectedText();
             if (sql != null) {
                 int selectendindex = 0;
@@ -1476,6 +1475,7 @@ public class QueryBuilder extends JFrame implements WindowListener,
     
             try {
                 Statement stmt = connection_meta.createStatement();
+
                 ResultSet rs = stmt
                         .executeQuery("SELECT pk_table_name, pk_column_name FROM relationships WHERE fk_column_name = '"
                                 + column
@@ -1488,8 +1488,8 @@ public class QueryBuilder extends JFrame implements WindowListener,
                     String pk_column_name = rs.getString("pk_column_name");
                     
                     listModel = (DefaultListModel) listTablesRecent.getModel();
-                    if (!listModel.contains(pk_table_name)) {
-                        listModel.addElement(pk_table_name);
+                    if (!listModel.contains(schema+'.'+pk_table_name)) {
+                        listModel.addElement(schema+'.'+pk_table_name);
                     }
                     
                     fromclause = fromclause + ", " +schema + "." + pk_table_name + " " + alias(pk_table_name);
