@@ -1,0 +1,11 @@
+bq load --autodetect --source_format=CSV main.albums gs://martinview4_chinook/albums.csv
+bq load --autodetect --source_format=CSV main.artists gs://martinview4_chinook/artists.csv
+bq load --autodetect --source_format=CSV main.customers gs://martinview4_chinook/customers.csv
+bq load --autodetect --source_format=CSV main.employees gs://martinview4_chinook/employees.csv
+bq load --autodetect --source_format=CSV main.genres gs://martinview4_chinook/genres.csv
+bq load --autodetect --source_format=CSV main.invoice_items gs://martinview4_chinook/invoice_items.csv
+bq load --autodetect --source_format=CSV main.invoices gs://martinview4_chinook/invoices.csv
+bq load --autodetect --source_format=CSV main.media_types gs://martinview4_chinook/media_types.csv
+bq load --autodetect --source_format=CSV main.playlist_track gs://martinview4_chinook/playlist_track.csv
+bq load --autodetect --source_format=CSV main.playlists gs://martinview4_chinook/playlists.csv
+bq load --autodetect --source_format=CSV main.tracks gs://martinview4_chinook/tracks.csv
