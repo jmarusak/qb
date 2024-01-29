@@ -1,4 +1,4 @@
-# Query Builder, yet another databases query tool 
+# Query Builder, yet another SQL query tool 
 
 <p align="center">
   <img src="screenshots/qb_screenshot_query.png" width="400" />
