@@ -1,2 +1,0 @@
-cd C:\Users\C44026\dev\work\QueryBuilder\
-C:\Users\C44026\dev\work\jdk\bin\java -Djavax.net.debug=SSL -Djavax.net.ssl.trustStore=C:\Users\C44026\dev\work\certs\truststore.jks -classpath .;C:\Users\C44026\dev\work\jdbc\*;C:\Users\C44026\dev\work\jdbc\bigquery\* TestJDBC
